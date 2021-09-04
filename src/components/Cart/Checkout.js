@@ -54,7 +54,7 @@ function Checkout(props) {
         }`}>
         <label htmlFor='name'>Your Name</label>
         <input type='text' id='name' ref={inputNameRef} />
-        {!formValidity.isNameValid && <p>Please Enter Non-Empty Value</p>}
+        {!formValidity.isNameValid && <p>Please Enter Non-Empty Name</p>}
       </div>
       <div
         className={`${classes.control} ${
@@ -62,7 +62,9 @@ function Checkout(props) {
         }`}>
         <label htmlFor='street'>Street</label>
         <input type='text' id='name' ref={inputStreetRef} />
-        {!formValidity.isStreetValid && <p>Please Enter Non-Empty Value</p>}
+        {!formValidity.isStreetValid && (
+          <p>Please Enter Non-Empty Street Name</p>
+        )}
       </div>
       <div
         className={`${classes.control} ${
@@ -70,7 +72,7 @@ function Checkout(props) {
         }`}>
         <label htmlFor='city'>City</label>
         <input type='text' id='name' ref={inputCityRef} />
-        {!formValidity.isCityValid && <p>Please Enter Non-Empty Value</p>}
+        {!formValidity.isCityValid && <p>Please Enter Non-Empty City Name</p>}
       </div>
       <div
         className={`${classes.control} ${

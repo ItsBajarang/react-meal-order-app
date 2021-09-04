@@ -56,6 +56,9 @@ const cartReducer = (state, action) => {
       }
       return { items: updatedItemsList, totalAmount: newTotalAmount };
 
+    case "CLEAR":
+      return defaulCartState;
+
     default:
       return defaulCartState;
   }
@@ -75,11 +78,16 @@ function CartProvider(props) {
     dispatchCartAction({ type: "REMOVE", id: id });
   };
 
+  const clearItemsFromCartHandler = () => {
+    dispatchCartAction({ type: "CLEAR" });
+  };
+
   const cartContext = {
     items: cartState.items, //[{ name: 'demp food', price: 50, amount: 5 }],
     totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
+    clearItems: clearItemsFromCartHandler,
   };
 
   return (

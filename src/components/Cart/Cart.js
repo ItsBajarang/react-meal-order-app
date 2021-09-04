@@ -64,6 +64,7 @@ function Cart(props) {
 
     setIsSubmitting(false);
     setDidSubmitted(true);
+    ctxt.clearItems();
   };
 
   const modalActions = (
